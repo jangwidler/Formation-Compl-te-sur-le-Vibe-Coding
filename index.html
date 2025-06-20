@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Formation Complète au Vibe Coding</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .gradient-blue {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .gradient-green {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .gradient-orange {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .gradient-purple {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .principle-detail { display: none; }
+        .principle-detail.active { display: block; }
+        .quiz-answer { display: none; }
+        .quiz-answer.active { display: block; }
+        .quiz-question {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .quiz-question:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-2">
+                <i class="fas fa-code mr-3"></i>
+                Formation Complète au Vibe Coding
+            </h1>
+            <p class="text-center text-xl opacity-90">
+                Tout comprendre sur cette nouvelle approche de programmation assistée par IA
+            </p>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Onglets -->
+        <div class="flex flex-wrap justify-center mb-8 bg-white rounded-lg shadow-lg p-2">
+            <button class="tab-btn px-6 py-3 mx-1 my-1 rounded-lg font-semibold transition-all active gradient-card text-white" data-tab="vue-ensemble">
+                <i class="fas fa-eye mr-2"></i>Vue d'Ensemble
+            </button>
+            <button class="tab-btn px-6 py-3 mx-1 my-1 rounded-lg font-semibold transition-all text-gray-700 hover:bg-gray-200" data-tab="principes">
+                <i class="fas fa-lightbulb mr-2"></i>Principes
+            </button>
+            <button class="tab-btn px-6 py-3 mx-1 my-1 rounded-lg font-semibold transition-all text-gray-700 hover:bg-gray-200" data-tab="erreurs">
+                <i class="fas fa-exclamation-triangle mr-2"></i>Erreurs à Éviter
+            </button>
+            <button class="tab-btn px-6 py-3 mx-1 my-1 rounded-lg font-semibold transition-all text-gray-700 hover:bg-gray-200" data-tab="bonnes-pratiques">
+                <i class="fas fa-check-circle mr-2"></i>Bonnes Pratiques
+            </button>
+            <button class="tab-btn px-6 py-3 mx-1 my-1 rounded-lg font-semibold transition-all text-gray-700 hover:bg-gray-200" data-tab="mise-en-pratique">
+                <i class="fas fa-rocket mr-2"></i>Mise en Pratique
+            </button>
+            <button class="tab-btn px-6 py-3 mx-1 my-1 rounded-lg font-semibold transition-all text-gray-700 hover:bg-gray-200" data-tab="quiz">
+                <i class="fas fa-question-circle mr-2"></i>Quiz (30 Questions)
+            </button>
+        </div>
+
+        <!-- Contenu Vue d'Ensemble -->
+        <div id="vue-ensemble" class="tab-content active">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">
+                        <i class="fas fa-info-circle mr-2 text-blue-500"></i>
+                        Qu'est-ce que le Vibe Coding ?
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        Le Vibe Coding est une approche de développement logiciel où l'utilisateur décrit en langage naturel ce qu'il souhaite créer, laissant l'intelligence artificielle générer automatiquement le code correspondant.
+                    </p>
+                    <p class="text-gray-600">
+                        Popularisé par Andrej Karpathy, cette méthode transforme la façon dont nous exprimons nos compétences techniques.
+                    </p>
+                </div>
+
+                <div class="gradient-blue rounded-lg shadow-lg p-6 text-white">
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-cogs mr-2"></i>
+                        Processus en 4 Étapes
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <span class="bg-white text-blue-500 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">1</span>
+                            <span><strong>Expression</strong> - Description en langage naturel</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="bg-white text-blue-500 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">2</span>
+                            <span><strong>Interprétation</strong> - L'IA comprend l'intention</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="bg-white text-blue-500 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">3</span>
+                            <span><strong>Génération</strong> - Création automatique du code</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="bg-white text-blue-500 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">4</span>
+                            <span><strong>Itération</strong> - Ajustement et raffinement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+                <div class="gradient-green rounded-lg shadow-lg p-6 text-white">
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-tools mr-2"></i>
+                        Outils Recommandés
+                    </h3>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="bg-white bg-opacity-20 rounded p-2">
+                            <strong>Cursor</strong> - Éditeur intelligent
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded p-2">
+                            <strong>Replit</strong> - Environnement en ligne
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded p-2">
+                            <strong>Lovable</strong> - Interface utilisateur
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded p-2">
+                            <strong>Bolt</strong> - Développement rapide
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded p-2">
+                            <strong>Windsurf</strong> - Collaboration
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gradient-orange rounded-lg shadow-lg p-6 text-white">
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Applications Principales
+                    </h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="bg-white bg-opacity-20 rounded p-2 text-center">Web</div>
+                        <div class="bg-white bg-opacity-20 rounded p-2 text-center">Mobile</div>
+                        <div class="bg-white bg-opacity-20 rounded p-2 text-center">Prototypage</div>
+                        <div class="bg-white bg-opacity-20 rounded p-2 text-center">Automatisation</div>
+                        <div class="bg-white bg-opacity-20 rounded p-2 text-center">Données</div>
+                        <div class="bg-white bg-opacity-20 rounded p-2 text-center">E-commerce</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenu Principes -->
+        <div id="principes" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">
+                <i class="fas fa-lightbulb mr-2 text-yellow-500"></i>
+                Principes Détaillés du Vibe Coding
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="principle-header cursor-pointer p-6 hover:bg-gray-50 transition-colors" data-principle="1">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-comment mr-3 text-blue-500"></i>
+                            1. Expression en Langage Naturel
+                            <i class="fas fa-chevron-down ml-auto transform transition-transform"></i>
+                        </h3>
+                    </div>
+                    <div class="principle-detail p-6 pt-0 border-t" data-detail="1">
+                        <p class="text-gray-600">
+                            Au lieu d'écrire du code directement, vous décrivez ce que vous voulez obtenir dans un langage clair et précis. L'IA transforme cette description en code fonctionnel. Cette approche démocratise la programmation en permettant aux non-programmeurs d'exprimer leurs besoins techniques.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="principle-header cursor-pointer p-6 hover:bg-gray-50 transition-colors" data-principle="2">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-brain mr-3 text-purple-500"></i>
+                            2. Interprétation Intelligente
+                            <i class="fas fa-chevron-down ml-auto transform transition-transform"></i>
+                        </h3>
+                    </div>
+                    <div class="principle-detail p-6 pt-0 border-t" data-detail="2">
+                        <p class="text-gray-600">
+                            Les Grands Modèles de Langage (LLMs) comme GPT ou Claude analysent votre demande, comprennent le contexte et les nuances. Ils identifient les technologies appropriées et planifient la structure du code nécessaire.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="principle-header cursor-pointer p-6 hover:bg-gray-50 transition-colors" data-principle="3">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-code mr-3 text-green-500"></i>
+                            3. Génération Automatique
+                            <i class="fas fa-chevron-down ml-auto transform transition-transform"></i>
+                        </h3>
+                    </div>
+                    <div class="principle-detail p-6 pt-0 border-t" data-detail="3">
+                        <p class="text-gray-600">
+                            L'IA produit du code complet, structuré et fonctionnel basé sur votre description. Elle applique les meilleures pratiques de programmation et choisit les technologies les plus adaptées à votre projet.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="principle-header cursor-pointer p-6 hover:bg-gray-50 transition-colors" data-principle="4">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-sync-alt mr-3 text-orange-500"></i>
+                            4. Itération et Raffinement
+                            <i class="fas fa-chevron-down ml-auto transform transition-transform"></i>
+                        </h3>
+                    </div>
+                    <div class="principle-detail p-6 pt-0 border-t" data-detail="4">
+                        <p class="text-gray-600">
+                            Le processus est itératif : vous pouvez demander des modifications, des améliorations ou des ajouts. L'IA adapte le code selon vos nouvelles exigences, permettant un développement agile et personnalisé.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="principle-header cursor-pointer p-6 hover:bg-gray-50 transition-colors" data-principle="5">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-magic mr-3 text-pink-500"></i>
+                            5. Prompt Engineering
+                            <i class="fas fa-chevron-down ml-auto transform transition-transform"></i>
+                        </h3>
+                    </div>
+                    <div class="principle-detail p-6 pt-0 border-t" data-detail="5">
+                        <p class="text-gray-600">
+                            La qualité du résultat dépend de la précision de vos instructions. Apprendre à formuler des prompts clairs et détaillés est essentiel pour obtenir le code souhaité. Plus votre description est précise, meilleur sera le résultat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenu Erreurs à Éviter -->
+        <div id="erreurs" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">
+                <i class="fas fa-exclamation-triangle mr-2 text-red-500"></i>
+                Erreurs à Éviter
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
+                    <h3 class="text-xl font-semibold text-red-600 mb-3">
+                        <i class="fas fa-times-circle mr-2"></i>
+                        Demandes Trop Complexes
+                    </h3>
+                    <p class="text-gray-600 mb-3">
+                        Évitez de commencer par des projets trop ambitieux. La complexité peut générer du code difficile à maintenir.
+                    </p>
+                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                        <strong class="text-green-700">Solution :</strong>
+                        <span class="text-green-600"> Décomposez en petites tâches managéables.</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
+                    <h3 class="text-xl font-semibold text-red-600 mb-3">
+                        <i class="fas fa-eye-slash mr-2"></i>
+                        Confiance Aveugle
+                    </h3>
+                    <p class="text-gray-600 mb-3">
+                        Ne jamais déployer sans revue humaine. L'IA peut produire du code fonctionnel mais non optimal.
+                    </p>
+                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                        <strong class="text-green-700">Solution :</strong>
+                        <span class="text-green-600"> Toujours réviser et tester le code généré.</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
+                    <h3 class="text-xl font-semibold text-red-600 mb-3">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        Négliger la Sécurité
+                    </h3>
+                    <p class="text-gray-600 mb-3">
+                        Vérifier systématiquement les vulnérabilités dans le code généré. L'IA peut introduire des failles de sécurité.
+                    </p>
+                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                        <strong class="text-green-700">Solution :</strong>
+                        <span class="text-green-600"> Audits de sécurité réguliers et validation des entrées utilisateur.</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
+                    <h3 class="text-xl font-semibold text-red-600 mb-3">
+                        <i class="fas fa-chain mr-2"></i>
+                        Dépendance Exclusive
+                    </h3>
+                    <p class="text-gray-600 mb-3">
+                        Développer aussi des compétences techniques traditionnelles. Ne pas devenir entièrement dépendant de l'IA.
+                    </p>
+                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                        <strong class="text-green-700">Solution :</strong>
+                        <span class="text-green-600"> Équilibrer Vibe Coding et apprentissage technique classique.</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
+                    <h3 class="text-xl font-semibold text-red-600 mb-3">
+                        <i class="fas fa-question mr-2"></i>
+                        Prompts Vagues
+                    </h3>
+                    <p class="text-gray-600 mb-3">
+                        Éviter les descriptions imprécises qui génèrent du code générique ou inadapté aux besoins.
+                    </p>
+                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                        <strong class="text-green-700">Solution :</strong>
+                        <span class="text-green-600"> Être spécifique sur les fonctionnalités, l'apparence et le comportement attendus.</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
+                    <h3 class="text-xl font-semibold text-red-600 mb-3">
+                        <i class="fas fa-deaf mr-2"></i>
+                        Ignorer les Avertissements
+                    </h3>
+                    <p class="text-gray-600 mb-3">
+                        Ne pas ignorer les messages d'erreur ou les avertissements générés par l'IA ou les outils de développement.
+                    </p>
+                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                        <strong class="text-green-700">Solution :</strong>
+                        <span class="text-green-600"> Traiter chaque avertissement comme une information importante.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenu Bonnes Pratiques -->
+        <div id="bonnes-pratiques" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">
+                <i class="fas fa-check-circle mr-2 text-green-500"></i>
+                Bonnes Pratiques
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="gradient-green rounded-lg shadow-lg p-6 text-white">
+                    <h3 class="text-xl font-bold mb-3">
+                        <i class="fas fa-play mr-2"></i>
+                        Commencer Simple
+                    </h3>
+                    <p class="mb-2">Débutez avec des requêtes basiques avant d'ajouter de la complexité. Testez d'abord des fonctionnalités simples pour comprendre le fonctionnement.</p>
+                </div>
+
+                <div class="gradient-blue rounded-lg shadow-lg p-6 text-white">
+                    <h3 class="text-xl font-bold mb-3">
+                        <i class="fas fa-bullseye mr-2"></i>
+                        Prompts Précis
+                    </h3>
+                    <p class="mb-2">Soyez explicite dans vos demandes. Spécifiez les boutons, champs, workflows et fonctionnalités attendues avec des détails concrets.</p>
+                </div>
+
+                <div class="gradient-orange rounded-lg shadow-lg p-6 text-white">
+                    <h3 class="text-xl font-bold mb-3">
+                        <i class="fas fa-flask mr-2"></i>
+                        Tester Systématiquement
+                    </h3>
+                    <p class="mb-2">Vérifiez chaque scénario possible. Testez tous les cas d'usage, les erreurs potentielles et les interactions utilisateur.</p>
+                </div>
+
+                <div class="gradient-purple rounded-lg shadow-lg p-6 text-white">
+                    <h3 class="text-xl font-bold mb-3">
+                        <i class="fas fa-search mr-2"></i>
+                        Revoir le Code
+                    </h3>
+                    <p class="mb-2">Ne jamais publier sans comprendre le fonctionnement. Analysez le code généré pour identifier les améliorations possibles.</p>
+                </div>
+
+                <div class="gradient-card rounded-lg shadow-lg p-6 text-white">
+                    <h3 class="text-xl font-bold mb-3">
+                        <i class="fas fa-step-forward mr-2"></i>
+                        Itérer Progressivement
+                    </h3>
+                    <p class="mb-2">Procédez par petites améliorations successives. Validez chaque étape avant de passer à la suivante.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-yellow-500">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">
+                        <i class="fas fa-user-shield mr-2 text-yellow-500"></i>
+                        Maintenir la Supervision
+                    </h3>
+                    <p class="text-gray-600">Gardez le contrôle sur les décisions critiques. L'IA assiste mais ne remplace pas le jugement humain.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenu Mise en Pratique -->
+        <div id="mise-en-pratique" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">
+                <i class="fas fa-rocket mr-2 text-blue-500"></i>
+                Plan de Mise en Pratique
+            </h2>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">
+                    <i class="fas fa-calendar-alt mr-2 text-green-500"></i>
+                    Plan d'Action sur 4 Semaines
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="gradient-green rounded-lg p-6 text-white">
+                        <h4 class="text-xl font-bold mb-3">
+                            <i class="fas fa-search mr-2"></i>
+                            Semaine 1 : Exploration
+                        </h4>
+                        <ul class="space-y-2">
+                            <li>• Tester divers outils (Cursor, Replit, Lovable, Bolt, Windsurf)</li>
+                            <li>• Créer un mini-projet simple</li>
+                            <li>• Comparer les résultats obtenus</li>
+                            <li>• Identifier l'outil qui correspond à votre style</li>
+                        </ul>
+                    </div>
+
+                    <div class="gradient-blue rounded-lg p-6 text-white">
+                        <h4 class="text-xl font-bold mb-3">
+                            <i class="fas fa-graduation-cap mr-2"></i>
+                            Semaines 2-3 : Approfondissement
+                        </h4>
+                        <ul class="space-y-2">
+                            <li>• Maîtriser l'outil principal choisi</li>
+                            <li>• Perfectionner le prompting</li>
+                            <li>• Apprendre à formuler des instructions précises</li>
+                            <li>• Pratiquer l'itération et le raffinement</li>
+                        </ul>
+                    </div>
+
+                    <div class="gradient-orange rounded-lg p-6 text-white">
+                        <h4 class="text-xl font-bold mb-3">
+                            <i class="fas fa-project-diagram mr-2"></i>
+                            Semaine 4 : Application
+                        </h4>
+                        <ul class="space-y-2">
+                            <li>• Créer un projet complet</li>
+                            <li>• Documenter votre processus</li>
+                            <li>• Tester toutes les fonctionnalités</li>
+                            <li>• Partager vos résultats</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">
+                    <i class="fas fa-tasks mr-2 text-purple-500"></i>
+                    Actions Indispensables
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                        <h4 class="font-bold text-purple-700 mb-2">
+                            <i class="fas fa-magic mr-2"></i>
+                            Maîtrisez les Prompts
+                        </h4>
+                        <p class="text-purple-600">Apprenez à formuler des instructions claires et précises</p>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-700 mb-2">
+                            <i class="fas fa-check mr-2"></i>
+                            Testez Systématiquement
+                        </h4>
+                        <p class="text-blue-600">Vérifiez chaque fonctionnalité générée</p>
+                    </div>
+
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-700 mb-2">
+                            <i class="fas fa-code mr-2"></i>
+                            Comprenez le Code
+                        </h4>
+                        <p class="text-green-600">Analysez et documentez le code généré</p>
+                    </div>
+
+                    <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-700 mb-2">
+                            <i class="fas fa-shield-alt mr-2"></i>
+                            Maintenez la Supervision
+                        </h4>
+                        <p class="text-yellow-600">Gardez le contrôle sur les décisions critiques</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenu Quiz -->
+        <div id="quiz" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">
+                <i class="fas fa-question-circle mr-2 text-purple-500"></i>
+                Quiz de Formation - 30 Questions
+            </h2>
+            
+            <div class="space-y-4">
+                <!-- Questions 1-5 : Définitions et concepts -->
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-500" data-question="1">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">1</span>
+                        Qu'est-ce que le Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-blue-50 p-4 rounded border-l-4 border-blue-300" data-answer="1">
+                        <p class="text-blue-800">Le Vibe Coding est une approche de développement logiciel où l'utilisateur décrit en langage naturel ce qu'il souhaite créer, laissant l'intelligence artificielle générer automatiquement le code correspondant.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500" data-question="2">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">2</span>
+                        Qui a popularisé le concept de Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-green-50 p-4 rounded border-l-4 border-green-300" data-answer="2">
+                        <p class="text-green-800">Andrej Karpathy a popularisé le concept de Vibe Coding.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500" data-question="3">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">3</span>
+                        Quelles sont les 4 étapes du processus Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-purple-50 p-4 rounded border-l-4 border-purple-300" data-answer="3">
+                        <p class="text-purple-800">Les 4 étapes sont : 1. Expression (description en langage naturel), 2. Interprétation (l'IA comprend l'intention), 3. Génération (création automatique du code), 4. Itération (ajustement et raffinement).</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-orange-500" data-question="4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">4</span>
+                        Qu'est-ce que les LLMs dans le contexte du Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-orange-50 p-4 rounded border-l-4 border-orange-300" data-answer="4">
+                        <p class="text-orange-800">Les LLMs (Grands Modèles de Langage) comme GPT ou Claude sont les technologies sous-jacentes qui analysent les demandes, comprennent le contexte et génèrent le code approprié.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500" data-question="5">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">5</span>
+                        Quelle est la principale différence entre le Vibe Coding et le codage traditionnel ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-red-50 p-4 rounded border-l-4 border-red-300" data-answer="5">
+                        <p class="text-red-800">Le Vibe Coding utilise la description d'intention en langage naturel plutôt que des instructions explicites avec une syntaxe précise, et se concentre sur le résultat souhaité plutôt que sur l'approche étape par étape.</p>
+                    </div>
+                </div>
+
+                <!-- Questions 6-10 : Fonctionnement -->
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-teal-500" data-question="6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">6</span>
+                        Que signifie "Expression" dans le processus Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-teal-50 p-4 rounded border-l-4 border-teal-300" data-answer="6">
+                        <p class="text-teal-800">L'Expression consiste à décrire en langage naturel ce que vous voulez créer, au lieu d'écrire directement du code.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500" data-question="7">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-indigo-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">7</span>
+                        Comment l'IA interprète-t-elle les demandes en Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-indigo-50 p-4 rounded border-l-4 border-indigo-300" data-answer="7">
+                        <p class="text-indigo-800">L'IA analyse la demande, comprend le contexte et les nuances, identifie les technologies appropriées et planifie la structure du code nécessaire.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-pink-500" data-question="8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">8</span>
+                        Qu'est-ce que le Prompt Engineering ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-pink-50 p-4 rounded border-l-4 border-pink-300" data-answer="8">
+                        <p class="text-pink-800">Le Prompt Engineering est l'art de formuler des instructions claires et détaillées pour obtenir le meilleur code possible de l'IA. Plus la description est précise, meilleur sera le résultat.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-yellow-500" data-question="9">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">9</span>
+                        Pourquoi l'itération est-elle importante dans le Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-yellow-50 p-4 rounded border-l-4 border-yellow-300" data-answer="9">
+                        <p class="text-yellow-800">L'itération permet de demander des modifications, améliorations ou ajouts. L'IA adapte le code selon les nouvelles exigences, permettant un développement agile et personnalisé.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-gray-500" data-question="10">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-gray-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">10</span>
+                        Que produit l'étape de Génération en Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-gray-50 p-4 rounded border-l-4 border-gray-300" data-answer="10">
+                        <p class="text-gray-800">L'IA produit du code complet, structuré et fonctionnel basé sur la description, appliquant les meilleures pratiques et choisissant les technologies adaptées.</p>
+                    </div>
+                </div>
+
+                <!-- Questions 11-15 : Outils -->
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-600" data-question="11">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">11</span>
+                        Quels sont les 5 outils principaux recommandés pour le Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-blue-50 p-4 rounded border-l-4 border-blue-300" data-answer="11">
+                        <p class="text-blue-800">Les 5 outils recommandés sont : Cursor (éditeur intelligent), Replit (environnement en ligne), Lovable (interface utilisateur), Bolt (développement rapide), et Windsurf (collaboration).</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-600" data-question="12">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">12</span>
+                        À quoi sert Cursor dans le Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-green-50 p-4 rounded border-l-4 border-green-300" data-answer="12">
+                        <p class="text-green-800">Cursor est un éditeur intelligent spécialement conçu pour le développement assisté par IA.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-600" data-question="13">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">13</span>
+                        Que recommande le document pour choisir un outil ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-purple-50 p-4 rounded border-l-4 border-purple-300" data-answer="13">
+                        <p class="text-purple-800">Le document recommande de commencer par tester plusieurs outils pour trouver celui qui correspond le mieux à votre style de travail.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-orange-600" data-question="14">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">14</span>
+                        Quel outil est recommandé pour l'environnement en ligne ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-orange-50 p-4 rounded border-l-4 border-orange-300" data-answer="14">
+                        <p class="text-orange-800">Replit est recommandé comme environnement de développement en ligne.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-600" data-question="15">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">15</span>
+                        Quel outil est spécialisé dans la collaboration ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-red-50 p-4 rounded border-l-4 border-red-300" data-answer="15">
+                        <p class="text-red-800">Windsurf est l'outil recommandé pour la collaboration en Vibe Coding.</p>
+                    </div>
+                </div>
+
+                <!-- Questions 16-20 : Bonnes pratiques -->
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-teal-600" data-question="16">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">16</span>
+                        Quelle est la première bonne pratique à adopter en Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-teal-50 p-4 rounded border-l-4 border-teal-300" data-answer="16">
+                        <p class="text-teal-800">Commencer simple : débutez avec des requêtes basiques avant d'ajouter de la complexité. Testez d'abord des fonctionnalités simples pour comprendre le fonctionnement.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-600" data-question="17">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">17</span>
+                        Pourquoi faut-il être précis dans ses prompts ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-indigo-50 p-4 rounded border-l-4 border-indigo-300" data-answer="17">
+                        <p class="text-indigo-800">Il faut spécifier les boutons, champs, workflows et fonctionnalités attendues avec des détails concrets pour obtenir un résultat précis et adapté aux besoins.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-pink-600" data-question="18">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">18</span>
+                        Que faut-il tester systématiquement ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-pink-50 p-4 rounded border-l-4 border-pink-300" data-answer="18">
+                        <p class="text-pink-800">Il faut vérifier chaque scénario possible : tous les cas d'usage, les erreurs potentielles et les interactions utilisateur.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-yellow-600" data-question="19">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-yellow-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">19</span>
+                        Pourquoi ne faut-il jamais publier sans comprendre le code ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-yellow-50 p-4 rounded border-l-4 border-yellow-300" data-answer="19">
+                        <p class="text-yellow-800">Il faut analyser le code généré pour identifier les améliorations possibles, comprendre son fonctionnement et s'assurer qu'il répond correctement aux besoins.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-gray-600" data-question="20">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">20</span>
+                        Que signifie "itérer progressivement" ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-gray-50 p-4 rounded border-l-4 border-gray-300" data-answer="20">
+                        <p class="text-gray-800">Procéder par petites améliorations successives et valider chaque étape avant de passer à la suivante.</p>
+                    </div>
+                </div>
+
+                <!-- Questions 21-25 : Erreurs à éviter -->
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500" data-question="21">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">21</span>
+                        Quelle erreur ne faut-il jamais commettre avant de publier ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-red-50 p-4 rounded border-l-4 border-red-300" data-answer="21">
+                        <p class="text-red-800">Ne jamais déployer sans revue humaine. L'IA peut produire du code fonctionnel mais non optimal.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-600" data-question="22">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">22</span>
+                        Pourquoi faut-il éviter les demandes trop complexes au début ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-red-50 p-4 rounded border-l-4 border-red-300" data-answer="22">
+                        <p class="text-red-800">La complexité peut générer du code difficile à maintenir. Il faut décomposer en petites tâches managéables.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-orange-500" data-question="23">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">23</span>
+                        Quel risque y a-t-il à négliger la sécurité ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-orange-50 p-4 rounded border-l-4 border-orange-300" data-answer="23">
+                        <p class="text-orange-800">L'IA peut introduire des failles de sécurité dans le code généré. Il faut faire des audits de sécurité réguliers et valider les entrées utilisateur.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500" data-question="24">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">24</span>
+                        Pourquoi éviter la dépendance exclusive à l'IA ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-purple-50 p-4 rounded border-l-4 border-purple-300" data-answer="24">
+                        <p class="text-purple-800">Il faut équilibrer Vibe Coding et apprentissage technique classique pour ne pas devenir entièrement dépendant de l'IA.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-pink-500" data-question="25">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">25</span>
+                        Que se passe-t-il avec des prompts vagues ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-pink-50 p-4 rounded border-l-4 border-pink-300" data-answer="25">
+                        <p class="text-pink-800">Les descriptions imprécises génèrent du code générique ou inadapté aux besoins. Il faut être spécifique sur les fonctionnalités, l'apparence et le comportement attendus.</p>
+                    </div>
+                </div>
+
+                <!-- Questions 26-30 : Applications et synthèse -->
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-500" data-question="26">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">26</span>
+                        Quelles sont les principales applications du Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-blue-50 p-4 rounded border-l-4 border-blue-300" data-answer="26">
+                        <p class="text-blue-800">Les principales applications sont : Web, Mobile, Prototypage, Automatisation, Gestion de données, Éducation, Santé, E-commerce, et Startup.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500" data-question="27">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">27</span>
+                        Combien de temps dure le plan d'action recommandé ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-green-50 p-4 rounded border-l-4 border-green-300" data-answer="27">
+                        <p class="text-green-800">Le plan d'action recommandé s'étale sur 4 semaines : Semaine 1 (Exploration), Semaines 2-3 (Approfondissement), Semaine 4 (Application).</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500" data-question="28">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">28</span>
+                        Que faut-il faire pendant la semaine d'exploration ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-purple-50 p-4 rounded border-l-4 border-purple-300" data-answer="28">
+                        <p class="text-purple-800">Tester divers outils, créer un mini-projet simple, comparer les résultats obtenus, et identifier l'outil qui correspond à votre style.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-orange-500" data-question="29">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">29</span>
+                        Le Vibe Coding remplace-t-il les compétences techniques ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-orange-50 p-4 rounded border-l-4 border-orange-300" data-answer="29">
+                        <p class="text-orange-800">Non, le Vibe Coding ne remplace pas la compétence technique, mais transforme la façon dont elle s'exprime. Il faut maintenir un équilibre avec l'apprentissage technique classique.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500" data-question="30">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="bg-indigo-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">30</span>
+                        Quel est l'objectif final de cette formation au Vibe Coding ?
+                        <i class="fas fa-chevron-down ml-auto text-gray-400"></i>
+                    </h3>
+                    <div class="quiz-answer bg-indigo-50 p-4 rounded border-l-4 border-indigo-300" data-answer="30">
+                        <p class="text-indigo-800">L'objectif est de comprendre cette nouvelle approche de programmation assistée par IA, maîtriser les outils et techniques, et savoir enseigner ses bases tout en évitant les pièges courants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gestion des onglets
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Désactiver tous les onglets et contenus
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active', 'gradient-card', 'text-white');
+                    btn.classList.add('text-gray-700', 'hover:bg-gray-200');
+                });
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                // Activer l'onglet cliqué
+                button.classList.add('active', 'gradient-card', 'text-white');
+                button.classList.remove('text-gray-700', 'hover:bg-gray-200');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Gestion des principes dépliables
+        document.querySelectorAll('.principle-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const principleNum = header.dataset.principle;
+                const detail = document.querySelector(`[data-detail="${principleNum}"]`);
+                const chevron = header.querySelector('.fa-chevron-down');
+                
+                detail.classList.toggle('active');
+                chevron.classList.toggle('rotate-180');
+            });
+        });
+
+        // Gestion du quiz
+        document.querySelectorAll('.quiz-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const questionNum = question.dataset.question;
+                const answer = question.querySelector(`[data-answer="${questionNum}"]`);
+                const chevron = question.querySelector('.fa-chevron-down');
+                
+                answer.classList.toggle('active');
+                chevron.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>
